@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bring a Bilingual Doctor to Your Workplace | Centro Médico Familiar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #980000;
+    --navy: #17224d;
+    --blue: #3493f0;
+    --white: #ffffff;
+    --cream: #faf8f5;
+    --navy-dark: #0e1733;
+    --red-dark: #740000;
+    --blue-light: #e8f3fe;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ===== STICKY BANNER ===== */
+  .banner {
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .banner strong { font-weight: 700; }
+  .banner .highlight { color: #ffd700; }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--navy);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 40px;
+    z-index: 999;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--red);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .logo-text {
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .logo-text span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .logo-text small {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .header-cta {
+    background: var(--red);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .header-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #1a2d6b 100%);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 40px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(52,147,240,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(152,0,0,0.2) 0%, transparent 60%);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(52,147,240,0.15);
+    border: 1px solid rgba(52,147,240,0.4);
+    color: var(--blue);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 4vw, 56px);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 900;
+  }
+  .hero h1 em {
+    color: var(--blue);
+    font-style: normal;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    max-width: 580px;
+    font-weight: 300;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(152,0,0,0.4);
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(152,0,0,0.5);
+  }
+  .btn-secondary {
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--white); }
+
+  /* Hero Form Card */
+  .hero-form-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  .form-top-badge {
+    background: linear-gradient(135deg, var(--red), #c00);
+    color: var(--white);
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .form-top-badge span { font-size: 20px; display: block; margin-bottom: 2px; }
+  .hero-form-card h3 {
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 6px;
+    font-family: 'Playfair Display', serif;
+  }
+  .hero-form-card p {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e0e4f0;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(52,147,240,0.12);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(152,0,0,0.35);
+  }
+  .form-submit:hover {
+    background: var(--red-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(152,0,0,0.45);
+  }
+  .form-trust {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  /* ===== VSL PLACEHOLDER ===== */
+  .vsl-section {
+    background: var(--navy);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .vsl-placeholder {
+    max-width: 720px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    border: 2px dashed rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 60px 40px;
+    color: rgba(255,255,255,0.5);
+  }
+  .vsl-placeholder .play-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+  .vsl-placeholder p {
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  section.visible { opacity: 1; transform: translateY(0); }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #4a5568;
+    max-width: 680px;
+  }
+
+  /* ===== PAIN POINTS ===== */
+  .pain {
+    background: var(--cream);
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .pain-list {
+    list-style: none;
+    margin-top: 28px;
+  }
+  .pain-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.55;
+  }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(152,0,0,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .pain-solution {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 36px;
+    color: var(--white);
+  }
+  .pain-solution h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+  .solution-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+  }
+  .solution-check {
+    color: #4ade80;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ===== ABOUT / WHY US ===== */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .about-visual {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: 20px;
+    padding: 48px 40px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 180px;
+    height: 180px;
+    background: rgba(52,147,240,0.12);
+    border-radius: 50%;
+  }
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .about-quote .spanish {
+    color: var(--blue);
+    font-style: italic;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+  }
+  .stat-box .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--blue);
+    display: block;
+  }
+  .stat-box .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .about-content .section-body { margin-bottom: 24px; }
+  .insurance-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 14px;
+    margin-top: 28px;
+  }
+  .insurance-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ins-badge {
+    background: var(--light-gray);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ===== PROGRAM / LUNCH & LEARN ===== */
+  .program { background: var(--navy); }
+  .program .section-title { color: var(--white); }
+  .program .section-label { color: var(--blue); }
+  .program .section-body { color: rgba(255,255,255,0.7); }
+  .program-topics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .topic-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 30px 26px;
+    transition: transform 0.25s, background 0.25s;
+  }
+  .topic-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.09);
+  }
+  .topic-num {
+    width: 40px;
+    height: 40px;
+    background: var(--red);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+  .topic-card h3 {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+  }
+  .topic-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  /* ===== FREE GIFT ===== */
+  .gift-section { background: var(--cream); }
+  .gift-box {
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    border-radius: 20px;
+    padding: 56px 60px;
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .gift-box::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .gift-box::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .gift-content { position: relative; z-index: 1; }
+  .gift-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 14px;
+  }
+  .gift-content h2 {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .gift-content p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+  }
+  .gift-tests { position: relative; z-index: 1; }
+  .gift-tests h3 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 20px;
+  }
+  .test-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .test-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .test-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .test-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 3px;
+  }
+  .test-info p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.4;
+  }
+  .gift-value {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .gift-value span { color: #ffd700; font-size: 22px; }
+
+  /* ===== EMPLOYER BENEFITS ===== */
+  .benefits { background: var(--white); }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .benefit-card {
+    border: 1.5px solid #e5e8f0;
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .benefit-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 8px 32px rgba(52,147,240,0.12);
+    transform: translateY(-3px);
+  }
+  .benefit-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .benefit-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ===== STEPS ===== */
+  .steps { background: var(--blue-light); }
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+    position: relative;
+  }
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: calc(16.66% + 16px);
+    right: calc(16.66% + 16px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--navy));
+    opacity: 0.25;
+  }
+  .step-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 26px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(23,34,77,0.08);
+    position: relative;
+  }
+  .step-num {
+    width: 64px;
+    height: 64px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    margin: 0 auto 20px;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 4px var(--blue-light);
+  }
+  .step-card h3 {
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+  .step-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  .steps-cta {
+    text-align: center;
+    margin-top: 44px;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials { background: var(--navy); }
+  .testimonials .section-title { color: var(--white); }
+  .testimonials .section-label { color: var(--blue); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 30px;
+    transition: background 0.25s;
+  }
+  .testi-card:hover { background: rgba(255,255,255,0.09); }
+  .testi-stars {
+    color: #fbbf24;
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  .testi-card blockquote {
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+  .testi-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.03em;
+  }
+  .awards-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .award-badge {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 16px 22px;
+    text-align: center;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .award-badge .icon { font-size: 26px; display: block; margin-bottom: 6px; }
+
+  /* ===== FAQS ===== */
+  .faqs { background: var(--cream); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid #e8ebf4;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: var(--blue); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 22px;
+    cursor: pointer;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    user-select: none;
+  }
+  .faq-arrow {
+    color: var(--blue);
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+  .faq-a {
+    padding: 0 22px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+  .faq-item.open .faq-a {
+    max-height: 200px;
+    padding: 0 22px 20px;
+  }
+
+  /* ===== FINAL CTA BAND ===== */
+  .cta-band {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(52,147,240,0.1) 0%, transparent 70%);
+  }
+  .cta-band-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .cta-band h2 {
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .cta-band p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+
+  /* ===== EMAIL OPT-IN ===== */
+  .optin { background: var(--white); }
+  .optin-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+  }
+  .optin h2 { font-size: 28px; margin-bottom: 14px; color: var(--navy); }
+  .optin p { font-size: 16px; color: var(--gray); margin-bottom: 28px; line-height: 1.6; }
+  .optin-form {
+    display: flex;
+    gap: 10px;
+  }
+  .optin-form input {
+    flex: 1;
+    padding: 13px 16px;
+    border: 1.5px solid #dde1ef;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    color: var(--navy);
+    transition: border-color 0.2s;
+  }
+  .optin-form input:focus { border-color: var(--blue); }
+  .optin-form button {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .optin-form button:hover { background: var(--navy-dark); }
+  .unsub { font-size: 12px; color: #9ca3af; margin-top: 12px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.55);
+    padding: 40px;
+    text-align: center;
+    font-size: 13px;
+  }
+  footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--white); }
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 900px) {
+    header { padding: 16px 20px; top: 36px; }
+    .hero { padding: 60px 20px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-form-card { max-width: 100%; }
+    .section-inner { padding: 56px 20px; }
+    .pain-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .program-topics { grid-template-columns: 1fr; }
+    .gift-box { grid-template-columns: 1fr; padding: 36px 28px; gap: 36px; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .steps-row { grid-template-columns: 1fr; }
+    .steps-row::before { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .optin-form { flex-direction: column; }
+    .banner { font-size: 12px; padding: 8px 16px; top: 0; }
+    header { top: 36px; }
+  }
+  @media (max-width: 600px) {
+    .benefits-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .header-cta { display: none; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY BANNER -->
+<div class="banner">
+  🎁 <strong>FREE for Every Attendee:</strong> A <span class="highlight">$150+ lab panel</span> — at no cost to your company. <strong>Limited spots available.</strong>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo-wrap">
+    <div class="logo-icon">🏥</div>
+    <div class="logo-text">
+      <span>Centro Médico Familiar</span>
+      <small>Duluth, Georgia · (678) 585-4959</small>
+    </div>
+  </a>
+  <a href="#interest-form" class="header-cta">Reserve Your Lunch &amp; Learn</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">🩺 Workplace Health Program</div>
+      <h1>Your Latino Employees Work Hard.<br><em>They Deserve a Doctor Who Actually Understands Them.</em></h1>
+      <p class="hero-sub">Centro Médico Familiar brings a bilingual doctor directly to your workplace — at no cost to you — to help your Spanish-speaking team live healthier, work stronger, and stay on the job. No language barriers. No insurance confusion. Just real care, in their language.</p>
+      <div class="hero-tags">
+        <span class="tag">✅ No cost to your company</span>
+        <span class="tag">🗣️ 100% in Spanish</span>
+        <span class="tag">🎁 Free lab tests included</span>
+        <span class="tag">📅 We handle everything</span>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#interest-form" class="btn-primary">Reserve Your Free Lunch &amp; Learn →</a>
+        <a href="tel:6785854959" class="btn-secondary">📞 Call us: (678) 585-4959</a>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-form-card" id="interest-form">
+      <div class="form-top-badge">
+        <span>🎁</span>
+        FREE GIFT FOR EVERY EMPLOYEE
+      </div>
+      <h3>Reserve Your Workplace Session</h3>
+      <p>We'll call you within 48 hours to confirm your date.</p>
+
+      <form action="mailto:info@centromedicofamiliar.net" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="your@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(000) 000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" name="company" placeholder="Your company" required>
+        </div>
+        <div class="form-group">
+          <label>Health Insurance You Work With</label>
+          <input type="text" name="insurance" placeholder="e.g. Cigna, Humana, Aetna…">
+        </div>
+        <div class="form-group">
+          <label>Spanish-Speaking Employees</label>
+          <select name="employees" required>
+            <option value="" disabled selected>Select a range</option>
+            <option value="1-30">1 – 30 employees</option>
+            <option value="30-50">30 – 50 employees</option>
+            <option value="50-100">50 – 100 employees</option>
+            <option value="100+">100+ employees</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Send My Request — We'll Call Within 48 hrs</button>
+      </form>
+      <p class="form-trust">🔒 Your information is private and never shared.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VSL PLACEHOLDER -->
+<div class="vsl-section">
+  <div class="vsl-placeholder">
+    <div class="play-icon">▶️</div>
+    <p><strong style="color:rgba(255,255,255,0.8);">VSL Placeholder:</strong> A 60–90 second video of Dr. Orlin Marquez speaking directly to HR directors and business owners — explaining the Lunch &amp; Learn program, the free gift for employees, and how to get started. Ideally filmed at the clinic or a workplace setting.</p>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="section-inner">
+    <div class="pain-grid">
+      <div>
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">You're Leaving One of Your Biggest Assets Unprotected</h2>
+        <p class="section-body">Your Spanish-speaking employees are often your most loyal, hardest-working team members. But when it comes to healthcare in the U.S., they face obstacles that most HR programs don't address — and that cost your business more than you realize.</p>
+        <ul class="pain-list">
+          <li>
+            <div class="pain-icon">🗣️</div>
+            <span>They avoid the doctor because no one there speaks their language or understands their background.</span>
+          </li>
+          <li>
+            <div class="pain-icon">🌎</div>
+            <span>Conditions common among people from Latin America — tropical illnesses, metabolic issues tied to diet changes — go undetected until they become serious.</span>
+          </li>
+          <li>
+            <div class="pain-icon">📉</div>
+            <span>When a health crisis hits, it becomes your problem: lost workdays, workers' comp claims, reduced productivity, and high turnover.</span>
+          </li>
+          <li>
+            <div class="pain-icon">🚫</div>
+            <span>Most wellness programs are built for English-speaking employees and completely miss your Latino workforce.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="pain-solution">
+        <h3>The good news? There's a simple fix.</h3>
+        <div class="solution-item">
+          <span class="solution-check">✓</span>
+          <span>We come to you. No disruption, no logistics burden — just show up with your team during lunch.</span>
+        </div>
+        <div class="solution-item">
+          <span class="solution-check">✓</span>
+          <span>Dr. Marquez speaks directly to your employees in fluent Spanish — no interpreters, no miscommunication.</span>
+        </div>
+        <div class="solution-item">
+          <span class="solution-check">✓</span>
+          <span>Every attendee leaves with a free lab panel worth $150+ and actionable health guidance they can use immediately.</span>
+        </div>
+        <div class="solution-item">
+          <span class="solution-check">✓</span>
+          <span>Your employees feel seen and valued. Your business gets a healthier, more loyal workforce.</span>
+        </div>
+        <div class="solution-item">
+          <span class="solution-check">✓</span>
+          <span>Zero cost to your company. We handle everything — you just provide the room and the people.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section class="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-quote">
+          <span class="spanish">"Mi doctor me entiende."</span><br>
+          And that changes everything.
+        </div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <span class="num">9+</span>
+            <span class="label">Major insurance plans accepted</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">2026</span>
+            <span class="label">Best Medical Office in Duluth</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">100%</span>
+            <span class="label">Bilingual Spanish & English</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">✅</span>
+            <span class="label">BBB Accredited Business</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Why Centro Médico Familiar</div>
+        <h2 class="section-title">We Are From Latin America. We Understand Our People.</h2>
+        <p class="section-body">At Centro Médico Familiar, we don't just speak Spanish — we understand the cultural experience of being Latino in the United States. Dr. Orlin Marquez (DNP, MBA, FNP-BC) and his team were built specifically to serve the Latino community in Georgia: in their language, with their values, and with an understanding of the health challenges unique to people who came from overseas.</p>
+        <p class="section-body" style="margin-top:16px;">When you bring us into your workplace, your employees don't just meet a doctor. They meet someone who sees them, hears them, and gives them real guidance — possibly for the first time ever.</p>
+        <p style="font-style:italic; color:var(--red); font-weight:600; margin-top:18px; font-size:16px;">Con o sin seguro, atendemos. With or without insurance, we serve.</p>
+        <div class="insurance-label">Insurance plans we accept</div>
+        <div class="insurance-logos">
+          <span class="ins-badge">Humana</span>
+          <span class="ins-badge">Cigna</span>
+          <span class="ins-badge">Oscar</span>
+          <span class="ins-badge">Aetna</span>
+          <span class="ins-badge">BlueCross BlueShield</span>
+          <span class="ins-badge">United Healthcare</span>
+          <span class="ins-badge">CareSource</span>
+          <span class="ins-badge">MultiPlan</span>
+          <span class="ins-badge">+ More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LUNCH & LEARN TOPICS -->
+<section class="program">
+  <div class="section-inner">
+    <div class="section-label">The Lunch &amp; Learn Session</div>
+    <h2 class="section-title" style="color:var(--white);">One Lunch Hour.<br>Real Health Education That Sticks.</h2>
+    <p class="section-body">Dr. Marquez delivers a bilingual, culturally relevant health education session tailored specifically for Latino employees. Here's what your team will learn:</p>
+    <div class="program-topics">
+      <div class="topic-card">
+        <div class="topic-num">1</div>
+        <h3>How to Live a Healthier Life in the U.S.</h3>
+        <p>The transition from Latin America to the United States brings major changes in diet, lifestyle, and access to care. Dr. Marquez breaks it down in plain Spanish: what to eat, what to watch for, and how to build habits that work in an American environment.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">2</div>
+        <h3>Diseases and Health Risks From Back Home</h3>
+        <p>Many conditions common in Latin America — parasites, tropical illnesses, viruses, and metabolic conditions tied to regional diets — are rarely screened for in standard U.S. checkups. Employees will learn what to watch for and when to get checked.</p>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">3</div>
+        <h3>Food, Nutrition, and Real Preventive Care</h3>
+        <p>Culturally relevant nutrition guidance that respects how Latino families eat and live, with practical advice employees can start using that same day — no generic handouts, no one-size-fits-all advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE GIFT -->
+<section class="gift-section">
+  <div class="section-inner">
+    <div class="gift-box">
+      <div class="gift-content">
+        <div class="gift-eyebrow">Included for Every Employee Who Attends</div>
+        <h2>A $150+ Lab Panel — Completely Free</h2>
+        <p>When you host a Lunch &amp; Learn, every attending employee receives a complimentary Perfil 20 lab voucher. No cost to your company. No cost to your employees. No insurance required. These three tests give a complete snapshot of an employee's overall health — often catching issues before they become serious problems.</p>
+        <div style="margin-top:24px; font-weight:700; font-size:16px; color:rgba(255,255,255,0.9);">
+          For many of your employees, this may be the first time they have ever had these tests done.
+        </div>
+      </div>
+      <div class="gift-tests">
+        <h3>Perfil 20 — What's Included</h3>
+        <div class="test-item">
+          <div class="test-icon">🩸</div>
+          <div class="test-info">
+            <h4>Hematología Completa</h4>
+            <p>Complete Blood Count — checks for anemia, infection, immune conditions, and more.</p>
+          </div>
+        </div>
+        <div class="test-item">
+          <div class="test-icon">⚗️</div>
+          <div class="test-info">
+            <h4>Perfil Metabólico</h4>
+            <p>Metabolic Panel — evaluates blood sugar, kidney function, liver health, and electrolytes.</p>
+          </div>
+        </div>
+        <div class="test-item">
+          <div class="test-icon">❤️</div>
+          <div class="test-info">
+            <h4>Perfil de Lípidos</h4>
+            <p>Lipid Panel — measures cholesterol and triglycerides to assess cardiovascular risk.</p>
+          </div>
+        </div>
+        <div class="gift-value">
+          Total Value: <span>$150+</span> per employee — at no cost to you
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYER BENEFITS -->
+<section class="benefits">
+  <div class="section-inner">
+    <div class="section-label">The Business Case</div>
+    <h2 class="section-title">Healthy Employees Are Your Competitive Advantage</h2>
+    <p class="section-body">When your Latino workforce feels seen, heard, and cared for, the numbers show it. Here's what you gain when you bring Centro Médico Familiar to your team:</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">📅</div>
+        <h3>Fewer Unplanned Absences</h3>
+        <p>Employees who receive preventive care miss fewer days. Catching problems early means fewer emergency situations that pull people off the floor or out of the field.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Higher Retention and Loyalty</h3>
+        <p>A workforce that feels supported stays longer. When a company invests in employees' health, those employees invest back in the company — with their time, energy, and loyalty.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <h3>Stronger Team Morale</h3>
+        <p>Bringing a doctor who speaks their language sends a clear message: "We see you, and we care." That kind of recognition builds morale that no salary bump alone can replicate.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💼</div>
+        <h3>Wellness Program Credit Opportunities</h3>
+        <p>Many group health plans reward employers who offer documented wellness programming. Your Lunch &amp; Learn may qualify as part of a larger workforce wellness initiative.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚀</div>
+        <h3>Zero Logistical Burden</h3>
+        <p>You provide the space and the people. We handle everything else — the doctor, the presentation, the educational materials, and the gift vouchers for every employee.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏆</div>
+        <h3>You Become the Hero</h3>
+        <p>Your Latino employees will remember who brought this to them. You will be known as the employer who genuinely cared — and that reputation travels fast within the community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 STEPS -->
+<section class="steps">
+  <div class="section-inner">
+    <div class="section-label" style="text-align:center;">What Happens Next</div>
+    <h2 class="section-title" style="text-align:center;">Three Steps From Today to a Healthier Team</h2>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>You Submit the Form</h3>
+        <p>Takes less than 2 minutes. Tell us about your team and your company. We receive it instantly and assign you to a program coordinator.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>We Call You Within 48 Hours</h3>
+        <p>A team member from Centro Médico Familiar will call to answer your questions, confirm your team details, and get your Lunch &amp; Learn officially on the calendar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>We Show Up. Your Employees Win.</h3>
+        <p>Dr. Marquez and his team arrive at your workplace, deliver the session in Spanish, and every employee walks away with their free Perfil 20 lab voucher. You look like a hero.</p>
+      </div>
+    </div>
+    <div class="steps-cta">
+      <a href="#interest-form" class="btn-primary" style="background:var(--navy); box-shadow:0 4px 24px rgba(23,34,77,0.3);">Reserve Your Lunch &amp; Learn →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-label">What Patients Say</div>
+    <h2 class="section-title">Real People. Real Results. Real Care.</h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"La mejor atención que se puede conseguir en ATL. El doctor Orlin y su equipo tiene una calidad humana inigualable. Los recomiendo altamente."</blockquote>
+        <div class="testi-name">— Jorianna Villalobos, Patient</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Ha sido un placer llegar a un lugar tan maravilloso. Me siento muy feliz por la atención recibida. El centro cuenta con un personal muy calificado y altamente profesional."</blockquote>
+        <div class="testi-name">— Otoniel Quintana, Patient</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"El Dr. Orlin es muy minucioso con su atención médica. Fue más allá para encontrar la solución. Lo recomiendo ampliamente."</blockquote>
+        <div class="testi-name">— Maria Gracia Magmud, Patient</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Mi clínica de preferencia, en donde me atienden con la mejor sonrisa. A toda persona que conozco y que necesita atención médica, los mando al Centro Médico Familiar."</blockquote>
+        <div class="testi-name">— Sindy Amador, Patient</div>
+      </div>
+    </div>
+    <div class="awards-row">
+      <div class="award-badge">
+        <span class="icon">🏅</span>
+        Best Medical Office<br>Duluth, GA — 2026
+      </div>
+      <div class="award-badge">
+        <span class="icon">✅</span>
+        BBB Accredited<br>Business
+      </div>
+      <div class="award-badge">
+        <span class="icon">🗣️</span>
+        Bilingual Care<br>Spanish &amp; English
+      </div>
+      <div class="award-badge">
+        <span class="icon">🩺</span>
+        Led by Dr. Orlin Marquez<br>DNP, MBA, FNP-BC
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faqs">
+  <div class="section-inner">
+    <div class="section-label" style="text-align:center;">Common Questions</div>
+    <h2 class="section-title" style="text-align:center;">Everything HR Directors Want to Know</h2>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-q">Is there any cost to my company to host a Lunch &amp; Learn? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">No. The Lunch &amp; Learn program is provided at no charge to your business. You provide the space and your employees' time during lunch. We bring the doctor, the presentation, and the complimentary lab test vouchers for every attendee.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is included in the free Perfil 20 lab panel? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Every employee who attends receives a voucher for three key lab tests: Hematología Completa (Complete Blood Count), Perfil Metabólico (Metabolic Panel), and Perfil de Lípidos (Lipid Panel). Together, these tests are valued at over $150 per person.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Do my employees need health insurance to use the lab coupon? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">No. Centro Médico Familiar serves patients with or without insurance. Employees who redeem their lab voucher will be taken care of regardless of their coverage status. Con o sin seguro, atendemos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What language is the session presented in? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">The presentation is delivered in Spanish by Dr. Orlin Marquez and his team, who are native Spanish speakers from Latin America. Portions can also be provided in English if needed. There are no interpreters — just direct, clear communication.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How long does the Lunch &amp; Learn session last? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">The typical session is designed to fit within a standard 45 to 60 minute lunch break. We are flexible and can adjust to fit your team's schedule and available space.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How many employees need to attend to qualify? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">We work with companies of all sizes — from 10 Spanish-speaking employees to 100+. There is no minimum headcount required to book. We tailor the session to your group size.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can you serve employees who have never seen a doctor in the U.S. before? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Absolutely. That is exactly who this program was designed for. Many Latino employees avoid U.S. healthcare because of language barriers, insurance confusion, or distrust of the system. Dr. Marquez and his team understand that experience and serve this community with patience and respect.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can employees become patients at the clinic after the session? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes. Employees who attend and want to continue their care are welcome to schedule appointments at Centro Médico Familiar in Duluth, Georgia. The clinic accepts most major insurance plans and also offers accessible self-pay options for those without coverage.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What happens after I fill out the form? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">A coordinator from Centro Médico Familiar will contact you within 48 business hours to answer your questions, confirm details about your team size and location, and get your Lunch &amp; Learn officially scheduled. There is no obligation after filling out the form.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I know my employees will actually find this valuable? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Centro Médico Familiar has been recognized as Best Medical Office in Duluth 2026 and holds BBB accreditation. Patient reviews consistently highlight the team's warmth, cultural understanding, and quality of care. This is not a generic corporate wellness talk — it's a doctor who looks like your employees, grew up like your employees, and genuinely understands what they are going through.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2>Ready to Bring This to Your Team?</h2>
+    <p>Fill out the form and we will call you within 48 hours to get your session on the calendar. No obligation. No cost. Just a healthier, more supported workforce waiting to happen.</p>
+    <a href="#interest-form" class="btn-primary" style="font-size:18px; padding:18px 40px;">Reserve Your Free Lunch &amp; Learn →</a>
+  </div>
+</div>
+
+<!-- EMAIL OPT-IN -->
+<section class="optin">
+  <div class="optin-inner">
+    <h2>Not Ready to Book Yet?</h2>
+    <p>Stay connected to employee health resources for Latino workforces, new program dates, and wellness tips you can share with your team — delivered to your inbox.</p>
+    <div class="optin-form">
+      <input type="email" placeholder="Enter your email address">
+      <button type="button">Keep Me Informed</button>
+    </div>
+    <p class="unsub">Unsubscribe anytime. We respect your inbox.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Centro Médico Familiar</div>
+  <div>3840 Peachtree Industrial Blvd, Suite 250 · Duluth, Georgia 30096</div>
+  <div style="margin-top:6px;"><a href="tel:6785854959">(678) 585-4959</a> · <a href="mailto:info@centromedicofamiliar.net">info@centromedicofamiliar.net</a></div>
+  <div class="footer-links">
+    <a href="https://centromedicofamiliar.net/privacy-policy/">Privacy Policy</a>
+    <a href="https://centromedicofamiliar.net/terms-conditions/">Terms &amp; Conditions</a>
+    <a href="https://centromedicofamiliar.net/ada-compliance/">ADA Compliance</a>
+    <a href="https://centromedicofamiliar.net">Back to Main Site</a>
+  </div>
+  <div style="margin-top:20px;">© 2026 Centro Médico Familiar · Designed by <a href="https://designdesk.tech">Design Desk</a></div>
+</footer>
+
+<script>
+  // Intersection observer for section fade-in
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href="#interest-form"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('interest-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>
+</body>
+</html>
